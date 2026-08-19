@@ -4,8 +4,8 @@
   "description": "Install-only fire stopping for main contractors and M&E subcontractors. Labour and certified materials to issued drawings. Dublin, Meath, Kildare, Wicklow and Louth.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0b1624",
-  "theme_color": "#0b1624",
+  "background_color": "#0B0B0B",
+  "theme_color": "#0B1624",
   "lang": "en-IE",
   "icons": [
     {
