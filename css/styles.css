@@ -1,0 +1,558 @@
+/* Líneach Fire Stop — industrial trade site */
+
+:root {
+  --ink: #070b10;
+  --navy: #0b1624;
+  --navy-2: #122033;
+  --navy-3: #1a2e46;
+  --lime: #c9e43a;
+  --lime-dim: #a8c028;
+  --lime-ink: #12180a;
+  --paper: #f2f4ef;
+  --paper-2: #e4e8db;
+  --text: #eef2e8;
+  --muted: #b7c0ae;
+  --dark-text: #141a12;
+  --mid-text: #3a4434;
+  --line: rgba(201, 228, 58, 0.32);
+  --danger: #e85d4c;
+  --font-display: "Barlow Condensed", "Arial Narrow", Impact, sans-serif;
+  --font-body: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  --nav-h: 4.25rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--nav-h) + 0.75rem);
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--dark-text);
+  background: var(--paper);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+}
+
+a:hover {
+  color: var(--lime-dim);
+}
+
+.skip-link {
+  position: absolute;
+  left: 0.75rem;
+  top: -3rem;
+  z-index: 2000;
+  padding: 0.5rem 0.85rem;
+  background: var(--lime);
+  color: var(--lime-ink);
+  font-weight: 700;
+}
+
+.skip-link:focus {
+  top: 0.75rem;
+}
+
+/* —— Nav —— */
+.site-nav {
+  background: var(--navy);
+  min-height: var(--nav-h);
+  border-bottom: 1px solid var(--line);
+}
+
+.site-nav .navbar-brand {
+  color: var(--text);
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+}
+
+.site-nav .navbar-brand:hover,
+.site-nav .navbar-brand:focus {
+  color: var(--lime);
+}
+
+.brand-logo {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  background: #000;
+  border-radius: 2px;
+}
+
+.brand-name {
+  line-height: 1.1;
+}
+
+.site-nav .nav-link {
+  color: var(--text);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.45rem 0.7rem;
+}
+
+.site-nav .nav-link:hover,
+.site-nav .nav-link:focus,
+.site-nav .nav-link.active {
+  color: var(--lime);
+}
+
+.navbar-toggler {
+  border-color: var(--line);
+}
+
+.navbar-toggler:focus {
+  box-shadow: 0 0 0 0.2rem rgba(201, 228, 58, 0.35);
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23c9e43a' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.btn-lime {
+  --bs-btn-color: var(--lime-ink);
+  --bs-btn-bg: var(--lime);
+  --bs-btn-border-color: var(--lime);
+  --bs-btn-hover-color: var(--lime-ink);
+  --bs-btn-hover-bg: #d6ef55;
+  --bs-btn-hover-border-color: #d6ef55;
+  --bs-btn-active-color: var(--lime-ink);
+  --bs-btn-active-bg: var(--lime-dim);
+  --bs-btn-active-border-color: var(--lime-dim);
+  --bs-btn-focus-shadow-rgb: 201, 228, 58;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.btn-ghost {
+  --bs-btn-color: var(--text);
+  --bs-btn-bg: transparent;
+  --bs-btn-border-color: var(--line);
+  --bs-btn-hover-color: var(--lime-ink);
+  --bs-btn-hover-bg: var(--lime);
+  --bs-btn-hover-border-color: var(--lime);
+  --bs-btn-focus-shadow-rgb: 201, 228, 58;
+  font-weight: 600;
+}
+
+/* —— Type —— */
+.display-head {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  line-height: 0.95;
+}
+
+.kicker {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--lime);
+  font-size: 0.92rem;
+  margin-bottom: 0.65rem;
+}
+
+.kicker-dark {
+  color: #5a6a1a;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  line-height: 1.05;
+  margin-bottom: 1rem;
+}
+
+.lead-tight {
+  font-size: 1.15rem;
+  max-width: 40rem;
+}
+
+/* —— Hero —— */
+.hero {
+  position: relative;
+  background:
+    linear-gradient(180deg, rgba(7, 11, 16, 0.2), rgba(7, 11, 16, 0.55)),
+    repeating-linear-gradient(
+      135deg,
+      #0b1624 0 18px,
+      #0d1a2a 18px 19px
+    );
+  color: var(--text);
+  min-height: calc(88vh - var(--nav-h));
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: auto -10% -30% 40%;
+  height: 80%;
+  background:
+    radial-gradient(closest-side, rgba(201, 228, 58, 0.14), transparent 70%);
+  pointer-events: none;
+}
+
+.hero-rule {
+  width: 4.5rem;
+  height: 4px;
+  background: var(--lime);
+  margin: 1.1rem 0 1.25rem;
+}
+
+.hero h1 {
+  font-size: clamp(2.6rem, 8vw, 5.4rem);
+  max-width: 16ch;
+}
+
+.hero p {
+  color: var(--muted);
+  max-width: 38rem;
+}
+
+.page-hero {
+  background: var(--navy);
+  color: var(--text);
+  padding: 3.2rem 0 2.6rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.page-hero h1 {
+  font-size: clamp(2rem, 5vw, 3.4rem);
+}
+
+.page-hero p {
+  color: var(--muted);
+  max-width: 40rem;
+  margin-bottom: 0;
+}
+
+/* —— Sections —— */
+.section {
+  padding: 4.2rem 0;
+}
+
+.section-dark {
+  background: var(--navy);
+  color: var(--text);
+}
+
+.section-dark .mid,
+.section-dark p,
+.section-dark li {
+  color: var(--muted);
+}
+
+.section-alt {
+  background: var(--paper-2);
+}
+
+.rule-lime {
+  width: 3.2rem;
+  height: 3px;
+  background: var(--lime);
+  margin-bottom: 1rem;
+}
+
+/* —— Cards —— */
+.card-plain {
+  background: #fff;
+  border: 1px solid #d7dccb;
+  border-left: 4px solid var(--lime);
+  border-radius: 2px;
+  padding: 1.35rem 1.4rem 1.25rem;
+  height: 100%;
+}
+
+.card-dark {
+  background: var(--navy-2);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--lime);
+  border-radius: 2px;
+  padding: 1.35rem 1.4rem;
+  height: 100%;
+  color: var(--text);
+}
+
+.card-dark p,
+.card-plain p {
+  margin-bottom: 0;
+}
+
+.card-plain h2,
+.card-plain h3,
+.card-dark h2,
+.card-dark h3 {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 1.35rem;
+  margin-bottom: 0.55rem;
+}
+
+.dont-card h3 {
+  color: var(--lime);
+}
+
+.num {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--lime);
+  font-size: 1.7rem;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  display: block;
+  margin-bottom: 0.55rem;
+}
+
+.num-dark {
+  color: #5a6a1a;
+}
+
+/* —— Lists —— */
+.tick-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tick-list li {
+  position: relative;
+  padding-left: 1.35rem;
+  margin-bottom: 0.45rem;
+}
+
+.tick-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 0.65rem;
+  height: 3px;
+  background: var(--lime);
+}
+
+.x-list li::before {
+  background: var(--danger);
+}
+
+/* —— Areas —— */
+.area-link {
+  display: block;
+  background: var(--navy-2);
+  color: var(--text);
+  border: 1px solid var(--line);
+  padding: 1.2rem 1.25rem;
+  text-decoration: none;
+  height: 100%;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.area-link:hover,
+.area-link:focus {
+  color: var(--text);
+  border-color: var(--lime);
+  transform: translateY(-2px);
+}
+
+.area-link h2,
+.area-link h3 {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--lime);
+  font-size: 1.5rem;
+  margin-bottom: 0.35rem;
+}
+
+.area-link p {
+  color: var(--muted);
+  margin: 0;
+}
+
+/* —— FAQ —— */
+.accordion-flush .accordion-item {
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  color: var(--text);
+}
+
+.accordion-button {
+  background: transparent;
+  color: var(--text);
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 1.15rem;
+  box-shadow: none;
+}
+
+.accordion-button:not(.collapsed) {
+  background: transparent;
+  color: var(--lime);
+  box-shadow: none;
+}
+
+.accordion-button::after {
+  filter: invert(1) sepia(1) saturate(6) hue-rotate(20deg);
+}
+
+.accordion-button:focus {
+  box-shadow: 0 0 0 0.2rem rgba(201, 228, 58, 0.28);
+}
+
+.accordion-body {
+  color: var(--muted);
+  padding-top: 0;
+}
+
+/* —— Forms —— */
+.form-label {
+  font-weight: 600;
+  color: var(--dark-text);
+}
+
+.form-control,
+.form-select {
+  border-radius: 2px;
+  border-color: #c5cbb6;
+  padding: 0.65rem 0.75rem;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--lime-dim);
+  box-shadow: 0 0 0 0.2rem rgba(201, 228, 58, 0.28);
+}
+
+.honeypot {
+  position: absolute;
+  left: -9999px;
+  height: 0;
+  overflow: hidden;
+}
+
+.form-panel {
+  background: #fff;
+  border: 1px solid #d7dccb;
+  padding: 1.6rem 1.5rem 1.4rem;
+}
+
+/* —— Footer —— */
+.site-footer {
+  background: var(--ink);
+  color: var(--muted);
+  padding: 3rem 0 1.6rem;
+  border-top: 1px solid var(--line);
+}
+
+.site-footer h2 {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text);
+  font-size: 1.05rem;
+  margin-bottom: 0.75rem;
+}
+
+.site-footer a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.site-footer a:hover,
+.site-footer a:focus {
+  color: var(--lime);
+  text-decoration: underline;
+}
+
+.site-footer .legal {
+  border-top: 1px solid rgba(201, 228, 58, 0.16);
+  margin-top: 2rem;
+  padding-top: 1.1rem;
+  font-size: 0.92rem;
+}
+
+/* —— Utility —— */
+.prose p {
+  max-width: 42rem;
+}
+
+.prose h2 {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-top: 2rem;
+  margin-bottom: 0.7rem;
+}
+
+.prose h3 {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.contact-block a {
+  color: var(--dark-text);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.contact-block a:hover {
+  color: #5a6a1a;
+  text-decoration: underline;
+}
+
+.section-dark .contact-block a {
+  color: var(--lime);
+}
+
+:focus-visible {
+  outline: 3px solid var(--lime);
+  outline-offset: 2px;
+}
+
+@media (max-width: 991.98px) {
+  .site-nav .btn-lime {
+    margin-top: 0.75rem;
+    width: 100%;
+  }
+}
+
+.accordion-button:hover,
+.accordion-button:focus {
+  background: transparent;
+  color: var(--lime);
+}
+
+.navbar-brand img {
+  flex-shrink: 0;
+}

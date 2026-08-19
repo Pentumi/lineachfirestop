@@ -1,0 +1,27 @@
+# OS / editor junk
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*.swo
+*~
+ehthumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# Secrets / env
+.env
+.env.local
+*.pem
+
+# Backup / temp
+*.bak
+*.tmp
+*.log
+
+# Node (if added later)
+node_modules/
+dist/
+build/
