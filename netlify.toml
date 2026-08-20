@@ -29,3 +29,75 @@
   to = "https://lineachfirestop.com/:splat"
   status = 301
   force = true
+
+# Dublin pretty URL: old no-slash and .html → trailing slash
+[[redirects]]
+  from = "/areas/dublin"
+  to = "/areas/dublin/"
+  status = 301
+
+[[redirects]]
+  from = "/areas/dublin.html"
+  to = "/areas/dublin/"
+  status = 301
+
+# Retired county stubs (and old no-slash / .html URLs) → areas hub
+[[redirects]]
+  from = "/areas/meath"
+  to = "/areas/"
+  status = 301
+
+[[redirects]]
+  from = "/areas/meath/"
+  to = "/areas/"
+  status = 301
+
+[[redirects]]
+  from = "/areas/meath.html"
+  to = "/areas/"
+  status = 301
+
+[[redirects]]
+  from = "/areas/kildare"
+  to = "/areas/"
+  status = 301
+
+[[redirects]]
+  from = "/areas/kildare/"
+  to = "/areas/"
+  status = 301
+
+[[redirects]]
+  from = "/areas/kildare.html"
+  to = "/areas/"
+  status = 301
+
+[[redirects]]
+  from = "/areas/wicklow"
+  to = "/areas/"
+  status = 301
+
+[[redirects]]
+  from = "/areas/wicklow/"
+  to = "/areas/"
+  status = 301
+
+[[redirects]]
+  from = "/areas/wicklow.html"
+  to = "/areas/"
+  status = 301
+
+[[redirects]]
+  from = "/areas/louth"
+  to = "/areas/"
+  status = 301
+
+[[redirects]]
+  from = "/areas/louth/"
+  to = "/areas/"
+  status = 301
+
+[[redirects]]
+  from = "/areas/louth.html"
+  to = "/areas/"
+  status = 301
