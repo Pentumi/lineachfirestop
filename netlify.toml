@@ -17,6 +17,38 @@
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
 
+# netlify.app subdomain is not canonical: send it to the apex
+[[redirects]]
+  from = "https://lineachfirestop.netlify.app/*"
+  to = "https://lineachfirestop.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://lineachfirestop.netlify.app/*"
+  to = "https://lineachfirestop.com/:splat"
+  status = 301
+  force = true
+
+# /index.html duplicates of directory URLs
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/:a/index.html"
+  to = "/:a/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/:a/:b/index.html"
+  to = "/:a/:b/"
+  status = 301
+  force = true
+
 # Apex is canonical: www → lineachfirestop.com
 [[redirects]]
   from = "https://www.lineachfirestop.com/*"
